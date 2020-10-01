@@ -1,6 +1,7 @@
-climplot<-function(df){
+climplot<-function(df,lieu){
   par(mar=c(5, 4, 4, 6) + 0.1)
-  barplot(df$MeanPlu,names.arg = df$Mois,axes=FALSE,las=2,col="blue",xlab="Mois",main="Pluviométrie et Température")
+  barplot(df$MeanPlu,names.arg = df$Mois,axes=FALSE,las=2,col="blue",xlab="Mois",
+          main=paste("Pluviométrie et Température",lieu))
   axis(side =2, ylim=c(0,max(df$MeanPlu)),ylab="Pluviométrie",las=2)
   mtext("Pluviométrie(mm)",side=2,line=2.5)
   par(new=TRUE)
